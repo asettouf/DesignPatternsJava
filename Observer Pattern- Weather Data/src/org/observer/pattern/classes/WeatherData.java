@@ -1,51 +1,51 @@
 package org.observer.pattern.classes;
 
-import java.util.ArrayList;
+import java.util.Observable;
 
-import org.observer.pattern.interfaces.Observer;
-import org.observer.pattern.interfaces.Subject;
-import org.observer.pattern.interfaces.WeatherSettings;
-
-public class WeatherData implements Subject {
-	private ArrayList<Observer> observers;
-	private WeatherSettings ws;
+public class WeatherData extends Observable{
+	private float temp;
+	private float humidity;
+	private float pressure;
 	
 	public WeatherData() {
-		this.observers = new ArrayList<Observer>();
-		this.ws = new WeatherSetup(0, 0, 0);
 	}
 	
-	@Override
-	public void registerObserver(Observer o) {
-		this.observers.add(o);
 
-	}
-
-	@Override
-	public void removeObserver(Observer o) {
-		int i = this.observers.indexOf(o);
-		if (i >= 0) {
-			this.observers.remove(i);
-		}
-
-	}
-
-	@Override
-	public void notifyObservers() {
-		for (int i=0; i<this.observers.size(); i++){
-			this.observers.get(i).update(ws);
-		}
-	}
 	
 	public void measurementChanged(){
-		this.notifyObservers();
+		super.setChanged();
+		super.notifyObservers();
 	}
 	
-	public void setMeasurements(WeatherSetup ws){
-		this.ws.setHumidity(ws.getHumidity());
-		this.ws.setPressure(ws.getPressure());
-		this.ws.setTemp(ws.getTemp());
+	public void setMeasurements(float temp, float humidity, float pressure){
+		this.temp = temp;
+		this.humidity = humidity;
+		this.pressure = pressure;
 		this.measurementChanged();
+	}
+
+	public float getTemp() {
+		return temp;
+	}
+
+	public void setTemp(float temp) {
+		this.temp = temp;
+	}
+
+	public float getHumidity() {
+		return humidity;
+	}
+
+	public void setHumidity(float humidity) {
+		this.humidity = humidity;
+	}
+
+	public float getPressure() {
+		return pressure;
+	}
+
+	public void setPressure(float pressure) {
+		this.pressure = pressure;
 	}
 
 }
