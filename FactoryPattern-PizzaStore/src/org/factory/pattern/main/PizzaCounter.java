@@ -1,16 +1,15 @@
 package org.factory.pattern.main;
 
 import org.factory.pattern.abstracts.Pizza;
-import org.factory.pattern.classes.PizzaStore;
-import org.factory.pattern.classes.SimplePizzaFactory;
+import org.factory.pattern.abstracts.PizzaStore;
+import org.factory.pattern.classes.ny.NYPizzaStore;
 
 public class PizzaCounter {
 
 	public static void main(String[] args) {
-		PizzaStore store = new PizzaStore(new SimplePizzaFactory());
-		Pizza pizza = null;
-		pizza = store.orderPizza("cheese");
-		System.out.println(pizza.getClass().getName());
+		PizzaStore store = new NYPizzaStore();
+		Pizza pizza = store.orderPizza("cheese");
+		System.out.println("I order " + pizza.getName());
 
 	}
 
