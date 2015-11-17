@@ -3,12 +3,10 @@ package org.factory.pattern.classes;
 import org.factory.pattern.abstracts.Pizza;
 import org.factory.pattern.abstracts.PizzaIngredientFactory;
 
-public class VeggiePizza extends Pizza {
-
+public class ClamPizza extends Pizza {
 	protected PizzaIngredientFactory ingredientFactory;
-
-	public VeggiePizza(PizzaIngredientFactory ingredientFactory) {
-		this.name = "Pepperoni Pizza";
+	public ClamPizza(PizzaIngredientFactory ingredientFactory) {
+		this.name = "Clam Pizza";
 		this.ingredientFactory = ingredientFactory;
 	}
 
@@ -18,7 +16,7 @@ public class VeggiePizza extends Pizza {
 		this.dough = this.ingredientFactory.createDough();
 		this.sauce = this.ingredientFactory.createSauce();
 		this.cheese = this.ingredientFactory.createCheese();
-		this.veggies = this.ingredientFactory.createVeggies();
+		this.clam = this.ingredientFactory.createClam();
 
 	}
 
