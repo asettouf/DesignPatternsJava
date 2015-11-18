@@ -3,6 +3,7 @@ package org.command.pattern.abstracts;
 public abstract class Remote {
 	protected Command[] onCommands;
 	protected Command[] offCommands;
+	protected Command undo = null;
 	protected int size = 7;
 	
 	public Remote(int size) {
@@ -24,10 +25,18 @@ public abstract class Remote {
 	
 	public void onButtonWasPushed(int slot){
 		this.onCommands[slot].execute();
+		this.undo = this.onCommands[slot];
 	}
 	
 	public void offButtonWasPushed(int slot){
 		this.offCommands[slot].execute();
+		this.undo = this.offCommands[slot];
+	}
+	
+	public void undoButtonWasPushed(){
+		if(this.undo != null) {
+			this.undo.undo();
+		}
 	}
 	
 	public String toString(){
