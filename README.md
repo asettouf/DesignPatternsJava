@@ -13,3 +13,6 @@ Implementation of various design patterns in Java from "Head First Design Patter
   - No class should derive from a concrete class
   - No method should override an implemented method of any of its base class
 *Depend on abstraction. Do not depend on concrete classes.
+
+*Nota Bene: each folder contains one type of pattern, we did not improve to the maximum every each
+of them, it is more each time about expliciting the pattern at stake*
