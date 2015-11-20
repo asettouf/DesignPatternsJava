@@ -10,9 +10,15 @@ public abstract class CoffeinBeverage {
 		this.boilWater();
 		this.brew();
 		this.pourInCup();
-		this.addCondiment();
-	};
+		if (customerWantsCondiment()){
+			this.addCondiment();
+		}
+	}
 	
+	//hook function
+	public boolean customerWantsCondiment(){
+		return true;
+	}
 	public void boilWater(){
 		System.out.println("Water is boiling");
 	}

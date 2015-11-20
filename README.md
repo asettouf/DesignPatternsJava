@@ -18,6 +18,8 @@ Implementation of various design patterns in Java from "Head First Design Patter
   - Objects passed in as a parameter to the method
   - Any object the method creates or instantiates
   - Any components of the object
+* **Hollywood Principle** Don't call us, we will call you:
+  - Avoid dependency rot: complex calls between several classes increasing in a useless manner the complexity
 
 *Nota Bene: each folder contains one type of pattern, we did not improve to the maximum every each
 of them, it is more each time about expliciting the pattern at stake*
