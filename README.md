@@ -13,7 +13,11 @@ Implementation of various design patterns in Java from "Head First Design Patter
   - No class should derive from a concrete class
   - No method should override an implemented method of any of its base class
 * Depend on abstraction. Do not depend on concrete classes
-* Principle of **Least Knowledge** - talk only to your immediate friends
+* Principle of **Least Knowledge** - talk only to your immediate friends, i.e. only invoke methods that belong to:
+  - The object itself
+  - Objects passed in as a parameter to the method
+  - Any object the method creates or instantiates
+  - Any components of the object
 
 *Nota Bene: each folder contains one type of pattern, we did not improve to the maximum every each
 of them, it is more each time about expliciting the pattern at stake*
