@@ -20,6 +20,9 @@ Implementation of various design patterns in Java from "Head First Design Patter
   - Any components of the object
 * **Hollywood Principle** Don't call us, we will call you:
   - Avoid dependency rot: complex calls between several classes increasing in a useless manner the complexity
+* **Single Responsibility Principle:**
+A class should only have one reason to change (a class should hold only one responsibility, i.e. one area of change
+to ensure a high degree of cohesion)
 
 *Nota Bene: each folder contains one type of pattern, we did not improve to the maximum every each
 of them, it is more each time about expliciting the pattern at stake*
