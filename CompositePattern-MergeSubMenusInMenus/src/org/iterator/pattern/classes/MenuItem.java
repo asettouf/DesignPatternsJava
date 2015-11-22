@@ -1,5 +1,7 @@
 package org.iterator.pattern.classes;
 
+import java.util.Iterator;
+
 import org.iterator.pattern.abstracts.MenuComponent;
 
 public class MenuItem extends MenuComponent{
@@ -56,6 +58,12 @@ public class MenuItem extends MenuComponent{
 		}
 		System.out.println(this.getPrice());
 		System.out.println(" ------ " + this.getDesc());
+	}
+
+
+	@Override
+	public Iterator createIterator() {
+		return new NullIterator();
 	}
 	
 	

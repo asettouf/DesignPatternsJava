@@ -44,7 +44,8 @@ public class MenuTestDrive {
 		dinerMenu.add(dessertMenu);
 		
 		Waitress waitress = new Waitress(allMenus);
-		waitress.printMenu();
+		//waitress.printMenu();
+		waitress.printVegetarianMenus();
 	}
 
 }

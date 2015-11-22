@@ -53,6 +53,12 @@ public class Menu extends MenuComponent {
 			component.print();
 		}
 	}
+
+	@Override
+	public Iterator createIterator() {
+		Iterator iterator = this.menuComponents.iterator();
+		return new CompositeIterator(iterator);
+	}
 	
 	
 

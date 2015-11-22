@@ -1,7 +1,10 @@
 package org.iterator.pattern.abstracts;
 
-public class MenuComponent {
+import java.util.Iterator;
+
+public abstract class MenuComponent {
 	
+	public abstract Iterator createIterator();
 	public void add(MenuComponent menuComponent){
 		throw new UnsupportedOperationException();
 	}

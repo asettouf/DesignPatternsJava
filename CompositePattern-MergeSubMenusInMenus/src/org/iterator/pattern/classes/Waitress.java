@@ -1,5 +1,7 @@
 package org.iterator.pattern.classes;
 
+import java.util.Iterator;
+
 import org.iterator.pattern.abstracts.MenuComponent;
 
 public class Waitress{
@@ -14,6 +16,20 @@ public class Waitress{
 		this.allMenus.print();
 	}
 	
+	public void printVegetarianMenus(){
+		Iterator iterator = this.allMenus.createIterator();
+		System.out.println("Veggie Menu");
+		while (iterator.hasNext()) {
+			MenuComponent component = (MenuComponent) iterator.next();
+			try {
+				if (component.isVegetarian()){
+					component.print();
+				}
+			} catch (UnsupportedOperationException e){
+				
+			}
+		}
+	}
 
 
 }
