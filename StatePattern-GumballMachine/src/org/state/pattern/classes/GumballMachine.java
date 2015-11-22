@@ -5,7 +5,7 @@ import org.state.pattern.abstracts.State;
 public class GumballMachine {
 	protected State hasQuarterState = new hasQuarterState(this);
 	protected  State noQuarterState = new NoQuarterState(this);
-	protected  State soldState = new soldState(this);
+	protected  State soldState = new WinnerState(this);
 	protected  State soldOutState = new soldOutState(this);
 	
 	protected State state;
