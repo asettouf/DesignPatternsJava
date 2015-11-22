@@ -37,6 +37,13 @@ public class GumballMachine {
 			this.count--;
 		}
 	}
+	
+	public void refill(int numberOfGumballs){
+		System.out.println("Refilling");
+		this.setCount(numberOfGumballs);
+		this.state = this.noQuarterState;
+	}
+	
 	public State getState() {
 		return state;
 	}
