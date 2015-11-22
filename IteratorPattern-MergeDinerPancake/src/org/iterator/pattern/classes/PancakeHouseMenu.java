@@ -1,10 +1,12 @@
 package org.iterator.pattern.classes;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
-import org.iterator.pattern.abstracts.Iterator;
+import org.iterator.pattern.abstracts.Menu;
 
-public class PancakeHouseMenu {
+
+public class PancakeHouseMenu implements Menu{
 	
 	protected ArrayList<MenuItem> menuItems;
 	
@@ -28,8 +30,8 @@ public class PancakeHouseMenu {
 		this.menuItems.add(new MenuItem(name, desc, vegetarian, price));
 	}
 	
-	public Iterator createIterator(){
-		return new PancakeHouseIterator(this.menuItems);
+	public Iterator<MenuItem> createIterator(){
+		return this.menuItems.iterator();
 	}
 	
 

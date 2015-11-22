@@ -1,12 +1,14 @@
 package org.iterator.pattern.classes;
 
-import org.iterator.pattern.abstracts.Iterator;
+import java.util.Iterator;
+
+import org.iterator.pattern.abstracts.Menu;
 
 public class Waitress {
-	PancakeHouseMenu pancakeHouseMenu;
-	DinerMenu dinerMenu;
+	Menu pancakeHouseMenu;
+	Menu dinerMenu;
 	
-	public Waitress(PancakeHouseMenu pancakeHouseMenu, DinerMenu dinerMenu) {
+	public Waitress(Menu pancakeHouseMenu, Menu dinerMenu) {
 		this.pancakeHouseMenu = pancakeHouseMenu;
 		this.dinerMenu = dinerMenu;
 	}

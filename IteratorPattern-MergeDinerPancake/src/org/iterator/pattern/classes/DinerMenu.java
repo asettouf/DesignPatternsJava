@@ -1,8 +1,10 @@
 package org.iterator.pattern.classes;
 
-import org.iterator.pattern.abstracts.Iterator;
+import java.util.Iterator;
 
-public class DinerMenu {
+import org.iterator.pattern.abstracts.Menu;
+
+public class DinerMenu implements Menu {
 	
 	protected static final int MAX_ITEMS = 6;
 	protected int numberOfItems = 0;
