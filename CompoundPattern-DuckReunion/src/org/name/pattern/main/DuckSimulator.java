@@ -4,6 +4,7 @@ import org.name.pattern.abstracts.AbstractDuckFactory;
 import org.name.pattern.abstracts.AbstractGooseFactory;
 import org.name.pattern.abstracts.Quackable;
 import org.name.pattern.classes.CountingDuckFactory;
+import org.name.pattern.classes.Flock;
 import org.name.pattern.classes.Goose;
 import org.name.pattern.classes.GooseFactory;
 import org.name.pattern.classes.QuackCounter;
@@ -18,7 +19,6 @@ public class DuckSimulator {
 	}
 	
 	public void simulate(AbstractDuckFactory duckFactory, AbstractGooseFactory gooseFactory){
-		Quackable mallardDuck = duckFactory.createMallardDuck();
 		Quackable redheadDuck = duckFactory.createRedheadDuck();
 		Quackable duckCall = duckFactory.createDuckCall();
 		Quackable rubberDuck = duckFactory.createRubberDuck();
@@ -27,11 +27,27 @@ public class DuckSimulator {
 		
 		System.out.println("Duck Simulator");
 		
-		this.simulate(mallardDuck);
-		this.simulate(redheadDuck);
-		this.simulate(duckCall);
-		this.simulate(rubberDuck);
-		this.simulate(gooseDuck);
+		Flock flockOfDucks = new Flock();
+		flockOfDucks.add(redheadDuck);
+		flockOfDucks.add(duckCall);
+		flockOfDucks.add(rubberDuck);
+		flockOfDucks.add(gooseDuck);
+		
+		Quackable mallrdOne = duckFactory.createMallardDuck();
+		Quackable mallrdTwo = duckFactory.createMallardDuck();
+		Quackable mallrdThree = duckFactory.createMallardDuck();
+		Quackable mallrdFour = duckFactory.createMallardDuck();
+		
+		Flock flockOfMallards = new Flock();
+		flockOfMallards.add(mallrdOne);
+		flockOfMallards.add(mallrdTwo);
+		flockOfMallards.add(mallrdThree);
+		flockOfMallards.add(mallrdFour);
+		
+		flockOfDucks.add(flockOfMallards);
+		
+		this.simulate(flockOfDucks);
+		this.simulate(flockOfMallards);
 		
 		System.out.println("Ducks quacked " + QuackCounter.getQuacks() + " times");
 	}
