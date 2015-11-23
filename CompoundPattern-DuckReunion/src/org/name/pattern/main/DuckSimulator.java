@@ -1,26 +1,26 @@
 package org.name.pattern.main;
 
+import org.name.pattern.abstracts.AbstractDuckFactory;
 import org.name.pattern.abstracts.Quackable;
-import org.name.pattern.classes.DuckCall;
+import org.name.pattern.classes.CountingDuckFactory;
 import org.name.pattern.classes.Goose;
 import org.name.pattern.classes.GooseAdapter;
-import org.name.pattern.classes.MallardDuck;
 import org.name.pattern.classes.QuackCounter;
-import org.name.pattern.classes.RedheadDuck;
-import org.name.pattern.classes.RubberDuck;
 
 public class DuckSimulator {
 
 	public static void main(String[] args) {
 		DuckSimulator simulator = new DuckSimulator();
-		simulator.simulate();
+		AbstractDuckFactory duckFactory = new CountingDuckFactory();
+		
+		simulator.simulate(duckFactory);
 	}
 	
-	public void simulate(){
-		Quackable mallardDuck = new QuackCounter(new MallardDuck());
-		Quackable redheadDuck = new QuackCounter(new RedheadDuck());
-		Quackable duckCall = new QuackCounter(new DuckCall());
-		Quackable rubberDuck = new QuackCounter(new RubberDuck());
+	public void simulate(AbstractDuckFactory duckFactory){
+		Quackable mallardDuck = duckFactory.createMallardDuck();
+		Quackable redheadDuck = duckFactory.createRedheadDuck();
+		Quackable duckCall = duckFactory.createDuckCall();
+		Quackable rubberDuck = duckFactory.createRubberDuck();
 		Goose goose = new Goose();
 		Quackable gooseDuck = new GooseAdapter(goose);
 		
