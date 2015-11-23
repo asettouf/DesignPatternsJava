@@ -8,6 +8,7 @@ import org.name.pattern.classes.Flock;
 import org.name.pattern.classes.Goose;
 import org.name.pattern.classes.GooseFactory;
 import org.name.pattern.classes.QuackCounter;
+import org.name.pattern.classes.Quackologist;
 
 public class DuckSimulator {
 
@@ -25,7 +26,7 @@ public class DuckSimulator {
 		Goose goose = gooseFactory.createGoose();
 		Quackable gooseDuck = gooseFactory.createGooseAdapter(goose);
 		
-		System.out.println("Duck Simulator");
+		
 		
 		Flock flockOfDucks = new Flock();
 		flockOfDucks.add(redheadDuck);
@@ -45,9 +46,12 @@ public class DuckSimulator {
 		flockOfMallards.add(mallrdFour);
 		
 		flockOfDucks.add(flockOfMallards);
+		System.out.println("Duck Simulator with Quackologist");
+		
+		Quackologist quackologist = new Quackologist();
+		flockOfDucks.registerObserver(quackologist);
 		
 		this.simulate(flockOfDucks);
-		this.simulate(flockOfMallards);
 		
 		System.out.println("Ducks quacked " + QuackCounter.getQuacks() + " times");
 	}
