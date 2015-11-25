@@ -27,6 +27,8 @@ public class BeatModel implements BeatModelInterface, MetaEventListener {
 	
 	@Override
 	public void initialize() {
+		this.setUpMidi();
+		this.buildTrackAndStart();
 	}
 
 	@Override
@@ -44,7 +46,7 @@ public class BeatModel implements BeatModelInterface, MetaEventListener {
 	@Override
 	public void setBPM(int bpm) {
 		this.bpm = bpm;
-		this.sequencer.setTempoInBPM(this.getBPM());
+		this.sequencer.setTempoInBPM(bpm);
 		this.notifyBPMObservers();
 	}
 
