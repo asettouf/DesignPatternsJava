@@ -3,7 +3,7 @@ package org.builder.pattern.entities;
 import org.builder.pattern.abstracts.MazeBuilder;
 
 public class StandardMazeBuilder extends MazeBuilder {
-	
+
 	public StandardMazeBuilder() {
 		this.currentMaze = null;
 	}
@@ -14,19 +14,18 @@ public class StandardMazeBuilder extends MazeBuilder {
 
 	@Override
 	public void buildRoom(int room) {
-		// TODO Auto-generated method stub
-
+		this.currentMaze.addRoom(new Room(room));
 	}
 
 	@Override
 	public void buildDoor(int roomFrom, int roomTo) {
-		// TODO Auto-generated method stub
-
+		this.currentMaze.addDoor(new Door(this.currentMaze.roomNo(roomFrom),
+				this.currentMaze.roomNo(roomTo)));
 	}
 
 	@Override
 	public Maze getMaze() {
-		// TODO Auto-generated method stub
+		System.out.println("Maze created");
 		return this.currentMaze;
 	}
 
