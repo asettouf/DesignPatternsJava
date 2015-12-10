@@ -1,7 +1,15 @@
 package org.builder.pattern.abstracts;
 
-public interface MapSite {
-	
-	public void enter();
+import org.builder.pattern.entities.Direction;
+
+public abstract class MapSite {
+	protected Direction dir;
+	public abstract void enter();
+	public void setDirection(Direction direction){
+		this.dir = direction;
+	}
+	public Direction getDirection(){
+		return this.dir;
+	}
 
 }

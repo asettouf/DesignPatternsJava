@@ -2,7 +2,7 @@ package org.builder.pattern.entities;
 
 import org.builder.pattern.abstracts.MapSite;
 
-public class Door implements MapSite{
+public class Door extends MapSite{
 	
 	protected Room roomFrom;
 	protected Room roomTo;
@@ -26,6 +26,9 @@ public class Door implements MapSite{
 	public void setOpen(boolean isOpen) {
 		this.isOpen = isOpen;
 	}
+
+
+
 
 	
 }
